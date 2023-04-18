@@ -1,0 +1,49 @@
+.shopping-cart {
+  position: absolute;
+  right: 0%;
+  width: 300px;
+  border: 1px solid blue;
+  border-radius: 10px;
+  height: 100vh;
+  background-color: lightgray;
+}
+
+.cart-item {
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+.cart-item img {
+  width: 50px;
+}
+.cart-item p {
+  width: 60%;
+}
+
+.button-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 70px;
+  height: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.button-area p {
+  margin: 0;
+  width: fit-content;
+  grid-column: 2/2;
+  grid-row: 1/1;
+  justify-self: center;
+}
+.button-area h4 {
+  margin: 0;
+  grid-column: 1/3;
+  width: fit-content;
+  justify-self: center;
+}
+.button-area button {
+  grid-row: 1/1;
+}
+
+/*# sourceMappingURL=Cart.css.map */
