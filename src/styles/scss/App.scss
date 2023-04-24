@@ -1,27 +1,29 @@
 body {
-    padding: 20px
+  padding: 20px;
 }
 
 .shopping-page {
-    display: grid;
-    grid-template-columns: 400px 400px 400px 400px 400px;
-    column-gap: 50px;
-    row-gap: 100px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  column-gap: 50px;
+  row-gap: 100px;
+  width: 65%;
 }
 
 .item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 500px;
-    border: 2px solid lightblue
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px;
+  border: 2px solid lightblue;
 }
 
 .img-wrapper {
-    img {
-        object-fit: cover;
-        height: 300px;
-        width:390px;
-    }
+  img {
+    object-fit: cover;
+    height: 98%;
+    width: 98%;
+    max-height: 300px;
+  }
 }
