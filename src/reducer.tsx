@@ -1,4 +1,4 @@
-import { createReducer, createAction, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export type Item = {
   image: string;

@@ -1,9 +1,10 @@
-import { useQuery } from "react-query";
+// import { useQuery } from "react-query";
 import "./styles/css/App.css";
 import Cart from "./Cart/Cart";
-import { useAppSelector, useAppDispatch } from "./store";
+import { useAppDispatch } from "./store";
 import { ADD } from "./reducer";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 type Items = {
   id: number;
@@ -16,34 +17,20 @@ type Items = {
 
 // const getData = async (): Promise<Items[]> => {
 // return await (await fetch("https://fakestoreapi.com/products")).json();
-// };
-
-// const data = getItems();
-
-interface Response {
-  data: Items[];
-}
-
-async function getItems() {
-  const { data: response } = await axios.get(
-    "https://fakestoreapi.com/products",
-    {
-      headers: {
-        "Accept-Encoding": "application/json",
-      },
-    }
-  );
-  console.log(response);
-}
-
-// let data;
-// axios
-// .get("https://fakestoreapi.com/products")
-// .then((response) => (data = response.data));
+// }
 
 function App() {
+  const [data, setData] = useState<Items[] | null>([]);
   // const { data, isLoading, error } = useQuery<Items[]>("products", getData);
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((response) => setData(response.data));
+  }, []);
+
+  console.log(data);
 
   const addToCart = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -62,7 +49,7 @@ function App() {
     <div className="App">
       <Cart />
       <div className="shopping-page">
-        {data.map((item: Items) => {
+        {data?.map((item: Items) => {
           return (
             <div className="item" key={item.id}>
               <div className="img-wrapper">
